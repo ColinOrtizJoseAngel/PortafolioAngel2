@@ -1,0 +1,427 @@
+body {
+  background-image: url('assets/wood-background.jpg');
+  background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+  background-repeat: no-repeat; /* Evita que se repita la imagen */
+  background-attachment: fixed; /* Hace que el fondo permanezca fijo al hacer scroll */
+  background-position: center; /* Centra la imagen */
+}
+
+.carousel-item img {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.icon-container {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.icon-container i {
+  font-size: 30px;
+  color: #3498db; /* Cambia el color según tu preferencia */
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estilo del modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: auto;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Contenido del modal */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 8px;
+  width: 60%;
+  max-width: 700px;
+  text-align: left;
+  animation: slideIn 0.5s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón de cierre */
+.modal-content .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.modal-content .close:hover {
+  color: #000;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-50px); }
+  to { transform: translateY(0); }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 10px 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+/* Estilo del botón falso */
+#old-portfolio-btn {
+  position: absolute; /* Relativo al contenedor .container */
+  top: 10px; /* Ajusta la posición vertical */
+  right: 10px; /* Ajusta la posición horizontal */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  color: #fff; /* Color del texto */
+  background-color: #3498db; /* Color de fondo */
+  border-radius: 5px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  cursor: pointer; /* Cursor de mano al pasar */
+  transition: all 0.3s ease-in-out; /* Transiciones suaves */
+  z-index: 200; /* Asegura que esté encima del contenido */
+}
+
+#old-portfolio-btn:hover {
+  transform: scale(1.1); /* Agranda ligeramente al hacer hover */
+  background-color: #2980b9; /* Cambia el color al hacer hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+}
+
+
+.container {
+  margin-top: 20px;
+}
+
+.book-container {
+  position: relative; /* Importante para el posicionamiento absoluto */
+  max-width: 600px;
+  margin: auto;
+  perspective: 1500px;
+  background: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  overflow: visible;
+}
+
+
+.page {
+  width: 100%;
+  min-height: 400px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.2em;
+  padding: 20px;
+  transition: transform 0.8s ease;
+  opacity: 0;
+  z-index: 1;
+  border-radius: 8px;
+}
+
+.book-footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.book-footer p {
+  margin: 0;
+  color: #555;
+}
+
+
+.page.active {
+  opacity: 1;
+  z-index: 2;
+  position: relative;
+}
+
+/* Contenedor principal para colocar las polaroids en lados opuestos */
+.polaroid-container {
+  display: flex;
+  justify-content: space-between; /* Coloca una polaroid a la izquierda y otra a la derecha */
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Estilo General de Polaroids */
+.polaroid {
+  width: 80%;
+  max-width: 250px;
+  padding: 10px;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  color: #666;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* Primera Polaroid - Rotación hacia la izquierda */
+.polaroid:first-child {
+  transform: rotate(-3deg);
+}
+
+/* Segunda Polaroid - Rotación hacia la derecha */
+.polaroid:last-child {
+  transform: rotate(3deg);
+}
+
+.polaroid img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.polaroid-caption {
+  margin-top: 10px;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+/* Loader */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  visibility: visible;
+}
+
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Áreas de clic laterales */
+.click-areas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.click-area {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 25%;
+  pointer-events: auto;
+  transition: background-color 0.3s ease;
+}
+
+.left-half {
+  left: 0;
+}
+
+.right-half {
+  right: 0;
+}
+
+.left-half:hover, .right-half:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.left-half:hover .arrow-left,
+.right-half:hover .arrow-right {
+  opacity: 1;
+}
+
+.arrow-left {
+  left: 10px;
+}
+
+.arrow-right {
+  right: 10px;
+}
+
+/* Pokédex */
+.pokedex {
+  width: 300px;
+  padding: 20px;
+  background-color: #cc0000;
+  border: 3px solid #333;
+  border-radius: 15px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 20;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pokedex-screen {
+  width: 100%;
+  background-color: #88ccff;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.pokedex-screen img {
+  width: 100px;
+  height: 100px;
+}
+
+.pokedex-controls {
+  display: flex;
+  gap: 10px;
+}
+
+#pokemon-search {
+  padding: 5px;
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #ffcc00;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+  .polaroid-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .polaroid {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+
+  .book-container {
+    padding: 10px;
+  }
+
+  .page {
+    padding: 15px;
+    font-size: 1em;
+  }
+
+  .arrow {
+    font-size: 1.5em;
+  }
+
+  .pokedex {
+    width: 100%;
+  }
+
+ /* Botón para la página Tales of the Cryptozoo */
+.cryptozoo-btn {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #8b0000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.cryptozoo-btn:hover {
+  background-color: #a52a2a;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+}

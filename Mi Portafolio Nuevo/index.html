@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Libro Interactivo</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Modal de bienvenida -->
+<div id="welcomeModal" class="modal">
+  <div class="modal-content">
+    <h2 id="welcome-title"></h2>
+    <p id="welcome-message"></p>
+    <button id="welcome-close-btn" class="close-btn">OK</button>
+  </div>
+</div>
+
+<!-- Loader -->
+<div id="loader" class="loader">
+  <div class="spinner"></div>
+</div>
+<!-- Modal de habilidades -->
+<div id="skillsModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Mis Habilidades</h2>
+    <ul>
+      <li><strong>Conocimiento básico en JDA y WMS</strong></li>
+      <li><strong>Diseño de páginas web:</strong> HTML, CSS, JavaScript, APIs, WordPress, React, Bootstrap.</li>
+      <li><strong>Diseño:</strong> Blender, 3D Max, Modo13, Paquetería Adobe.</li>
+      <li><strong>Programación:</strong> Java, C, C++, C#, Python, Shell, Lenguajes Web.</li>
+      <li><strong>Protocolos de transferencia:</strong> FTP.</li>
+      <li><strong>Sistemas Operativos:</strong> Windows, Fedora, Ubuntu, Virtualizadores.</li>
+      <li><strong>Business Intelligence:</strong> Pentaho Spoon, Power BI.</li>
+      <li><strong>Bases de datos:</strong> Oracle, PostgreSQL, MySQL, MongoDB, AWS, Microsoft SQL Server.</li>
+      <li><strong>Consultoría:</strong> Blueyonder, Salesforce.</li>
+    </ul>
+  </div>
+</div>
+<div class="container mt-5">
+  <!-- Botón flotante para el viejo portafolio -->
+  <div id="old-portfolio-btn" class="old-portfolio-btn">Viejo Portafolio</div>
+  <div class="book-container">
+    
+    <h1 id="header-text" class="text-center">Jose Angel Colin Ortiz</h1>
+
+    <!-- Primera Página -->
+    <div class="page active" id="page1">
+      <div class="page-content">
+        <h2 id="page1-title">Bienvenidos</h2>
+        <p id="page1-content">Bienvenidos a mi portafolio interactivo. Aquí te presento uno de mis proyectos.</p>
+        
+        <div class="polaroid">
+          <img src="assets/proyecto1.jpg" alt="Proyecto 1">
+          <div id="polaroid-caption" class="polaroid-caption">Apasionado programador y diseñador</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Segunda Página -->
+<div class="page" id="page2">
+  <div class="page-content">
+    <h2 id="page2-title">Experiencia</h2>
+    <p id="page2-content">Aquí encontrarás detalles sobre mi experiencia y proyectos en desarrollo de software y tecnología.</p>
+
+    <!-- Ícono de engranaje -->
+    <div class="icon-container">
+      <i class="fas fa-cog"></i>
+    </div>
+
+
+    <!-- Carrusel de imágenes -->
+    <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="4000">
+      <div class="carousel-inner">
+        <!-- Imagen 1 -->
+        <div class="carousel-item active">
+          <img src="assets/proyecto3.jpg" class="d-block w-100" alt="Proyecto CRM">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 id="carousel-title-1">CRM Arquitectónico</h5>
+            <p id="carousel-text-1">Sistema de administración de empleados para pagos y asistencias.</p>
+          </div>
+        </div>
+        <!-- Imagen 2 -->
+        <div class="carousel-item">
+          <img src="assets/proyecto2.jpg" class="d-block w-100" alt="App Tipo Uber">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 id="carousel-title-2">App Tipo Uber</h5>
+            <p id="carousel-text-2">Aplicación móvil para transporte.</p>
+          </div>
+        </div>
+        <!-- Imagen 3 -->
+        <div class="carousel-item">
+          <img src="assets/ChatBots.png" class="d-block w-100" alt="E-commerce con Chat AI">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 id="carousel-title-3">E-commerce con Chat AI</h5>
+            <p id="carousel-text-3">Tienda en línea con soporte automatizado mediante OpenAI.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Controles del carrusel -->
+      <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Siguiente</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+    
+<div class="page" id="page3">
+  <div class="page-content">
+    <h2 id="page3-title">Diseño y Creatividad</h2>
+    <p id="page3-content"></p>
+
+    <!-- Contenedor bilingüe -->
+    <div class="design-section">
+      <div class="design-content" id="design-list"></div>
+      <p id="design-library-link" class="text-center"></p>
+    </div>
+  </div>
+</div>
+
+    <!-- Cuarta Página - Pokédex -->
+    <div class="page" id="page4">
+      <div class="page-content">
+        <h2 id="page4-title">Pokédex</h2>
+        <p id="page4-content">Encuentra y conoce más sobre los Pokémon usando esta Pokédex. Tengo experiencia en el uso de APIs.</p>
+        
+        <!-- Pokédex Contenedor -->
+        <div class="pokedex">
+          <!-- Logo de Pokémon -->
+          <div class="pokedex-header">
+            <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="Logo de Pokémon" class="pokemon-logo">
+          </div>
+          <div class="pokedex-screen">
+            <img id="pokemon-image" src="" alt="Imagen del Pokémon">
+            <h3 id="pokemon-name">Nombre</h3>
+            <p id="pokemon-info">Información</p>
+          </div>
+          
+          <!-- Controles de la Pokédex -->
+          <div class="pokedex-controls">
+            <input type="text" id="pokemon-search" placeholder="ID o nombre">
+            <button onclick="fetchPokemon()">Buscar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- Quinta Página - Tales of the Cryptozoo -->
+<div class="page" id="page5">
+  <div class="page-content">
+    <h2 id="page5-title">Tales of the Cryptozoo</h2>
+    <p id="page5-content">
+      Tales of the Cryptozoo es un juego de horror psicológico que desarrollé, lleno de misterio, acertijos y criaturas fascinantes. ¡Explora el mundo y descubre sus secretos oscuros!
+    </p>
+    <div style="text-align: center; margin-top: 20px;">
+      <button id="cryptozoo-link" class="cryptozoo-btn">Ver en Steam</button>
+    </div>
+  </div>
+</div>
+
+    <!-- Áreas de clic para cambiar de página -->
+    <div class="click-areas">
+      <div class="click-area left-half" onclick="previousPage()">
+        <span class="arrow arrow-left">&larr;</span>
+      </div>
+      <div class="click-area right-half" onclick="nextPage()">
+        <span class="arrow arrow-right">&rarr;</span>
+      </div>
+      <div id="footer" class="book-footer">
+        <p id="footer-text"></p>
+      </div>
+      
+    </div>
+    
+  </div>
+  
+</div>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
